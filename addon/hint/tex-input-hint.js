@@ -34,6 +34,7 @@
     { text: "\\_2",     symbol: "₂" },
     { text: "\\alpha",  symbol: "α" },
     { text: "\\beta",   symbol: "β" },
+    { text: "\\circ",   symbol: "∘" },
     { text: "\\delta",  symbol: "δ" },
     { text: "\\epsilon", symbol: "ε" },
     { text: "\\exists", symbol: "∃" },
