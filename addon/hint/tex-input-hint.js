@@ -133,11 +133,13 @@
     CodeMirror.defineInitHook(function (cm) {
 
       // XXX: Do we want to hook on "_" and "^", etc... ?
-      cm.addKeyMap({"\\": function(cm)
-                    {
-                      cm.replaceSelection("\\");
-                      cm.execCommand("autocomplete");
-                    }});
+      cm.getWrapperElement().addEventListener('keydown', (e) => {
+          if (e.key === '\\') {
+              e.preventDefault();
+              cm.replaceSelection("\\");
+              cm.execCommand("autocomplete");
+          }
+      });
 
       // We need to update the local keymap to the hints.
       var extraHintKeyMap = { Space: function(cm) {
